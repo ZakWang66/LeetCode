@@ -16,12 +16,15 @@
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
+<<<<<<< HEAD
+=======
         },
         {
             "type": "java",
             "name": "Debug (Launch)-P15_3sum",
             "request": "launch",
             "mainClass": "P15_3sum"
+>>>>>>> 583d3e1c53da6732cb65287d103390f112c28bc8
         }
     ]
 }
