@@ -6,18 +6,37 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Debug (Launch) - Current File",
+            "name": "CodeLens (Launch) - P811",
             "request": "launch",
-            "mainClass": "${file}"
-<<<<<<< HEAD
-=======
+            "mainClass": "P811",
+            "projectName": "LeetCode_a571caff"
         },
         {
             "type": "java",
-            "name": "Debug (Launch)-P15_3sum",
+            "name": "CodeLens (Launch) - P133",
             "request": "launch",
-            "mainClass": "P15_3sum"
->>>>>>> 583d3e1c53da6732cb65287d103390f112c28bc8
+            "mainClass": "P133",
+            "projectName": "LeetCode_a571caff"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - P322",
+            "request": "launch",
+            "mainClass": "P322",
+            "projectName": "LeetCode_a571caff"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - P929_uniqueEmailAddress",
+            "request": "launch",
+            "mainClass": "P929_uniqueEmailAddress",
+            "projectName": "LeetCode_a571caff"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
         }
     ]
 }

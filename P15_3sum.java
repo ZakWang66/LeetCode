@@ -7,36 +7,34 @@ public class P15_3sum{
         }
     }
     public static List<List<Integer>> threeSum(int[] nums) {
-
-        public List<List<Integer>> threeSum(int[] nums) {
-            List<List<Integer>> result = new ArrayList<List<Integer>>();
-            Arrays.sort(nums);
-            for (int i = 0; i < nums.length - 2; i++){
-                if (i != 0 && nums[i] == nums[i-1]) continue;
-                int low = i + 1;
-                int top = nums.length - 1;
-                while (low < top){
-                    if (nums[low] + nums[top] > -nums[i]){
-                        top--;
-                    }
-                    else if (nums[low] + nums[top] < -nums[i]){
-                        low++;
-                    }
-                    else{
-                        List<Integer> solution = new ArrayList<Integer>();
-                        solution.add(nums[i]);
-                        solution.add(nums[low]);
-                        solution.add(nums[top]);
-                        while (low < top && nums[top] == nums[top-1]) top--;
-                        while (low < top && nums[low] == nums[low+1]) low++;
-                        result.add(solution);
-                        top--;
-                        low++;
-                    }
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length - 2; i++){
+            if (i != 0 && nums[i] == nums[i-1]) continue;
+            int low = i + 1;
+            int top = nums.length - 1;
+            while (low < top){
+                if (nums[low] + nums[top] > -nums[i]){
+                    top--;
+                }
+                else if (nums[low] + nums[top] < -nums[i]){
+                    low++;
+                }
+                else{
+                    List<Integer> solution = new ArrayList<Integer>();
+                    solution.add(nums[i]);
+                    solution.add(nums[low]);
+                    solution.add(nums[top]);
+                    while (low < top && nums[top] == nums[top-1]) top--;
+                    while (low < top && nums[low] == nums[low+1]) low++;
+                    result.add(solution);
+                    top--;
+                    low++;
                 }
             }
-            return result;
         }
+        return result;
+    }
         /** My old solution
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         Arrays.sort(nums);
@@ -64,7 +62,6 @@ public class P15_3sum{
         }
         return result;
         */
-    }
     /** Sample solution
     public List<List<Integer>> threeSum(int[] num) {
     Arrays.sort(num);
