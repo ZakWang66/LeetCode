@@ -2,7 +2,9 @@ package leetcode;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
 
 /*
@@ -118,10 +120,40 @@ class Solution {
                 }
             }
         }
+        
+ 
+
+        StringBuffer res = new StringBuffer();
+        Queue<Character> queue = new LinkedList<>();
+
+        for (Character c : degree.keySet()) {
+            if (degree.get(c) == 0) {
+                queue.offer(c);
+            }    
+        }
+        
+        while (!queue.isEmpty()) {
+            Character current = queue.poll();
+            res.append(current);
+            Set<Character> neighbors = graph.get(current);
+            if (neighbors == null) continue;
+            for (Character neighbor : neighbors) {
+                int newDegree = degree.get(neighbor) - 1;
+                degree.put(neighbor, newDegree);
+                if (newDegree == 0) {
+                    queue.offer(neighbor);
+                }
+            }
+        }
+        
+        String result = res.toString();
 
         System.out.println(degree.toString());
-        System.out.println(graph.toString());        
-        
+        System.out.println(graph.toString());     
+
+        if (result.length() == degree.size()) {
+            return result;
+        }
         return "";
     }
 }
