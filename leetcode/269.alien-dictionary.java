@@ -122,10 +122,12 @@ class Solution {
             String s1 = words[i];
             String s2 = words[i + 1];
             int minLength = s1.length() < s2.length() ? s1.length() : s2.length();
+            boolean identical = true;
             for (int j = 0; j < minLength; j++) {
                 Character smaller = s1.charAt(j);
                 Character larger = s2.charAt(j);
                 if (smaller != larger) {
+                    identical = false;
                     if (!graph.containsKey(smaller)) graph.put(smaller, new HashSet<>());
                     Set<Character> neighbors = graph.get(smaller);
                     if (!neighbors.contains(larger)) {    
@@ -134,6 +136,9 @@ class Solution {
                     }
                     break;
                 }
+            }
+            if (identical && s1.length() > s2.length()) {
+                return "";
             }
         }
 
